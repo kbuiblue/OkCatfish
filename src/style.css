@@ -1,24 +1,103 @@
 :root {
-    font-family: Poppins, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-family: Poppins, sans-serif;
     line-height: 1.5;
     font-weight: 400;
+    box-sizing: border-box;
 
-    --app-background: #fff;
+    --app-background: #f7f8fb;
     --body-background: #242424;
+    --red-gradient: linear-gradient(0.25turn, #f83375, #fa695a);
 }
 
-body {
-    margin: 0;
+html {
+    padding: 3.5em 0;
     display: flex;
-    place-items: center;
-    min-width: 550px;
+    align-items: center;
     background-color: var(--body-background);
 }
 
-main {
-    min-width: 550px;
-    min-height: 100vh;
+body {
+    display: flex;
+    flex-direction: column;
+    margin-top: 25%;
+    max-width: 550px;
+    border-radius: 10px;
+    min-height: fit-content;
     margin: 0 auto;
-    padding: 2rem;
     background-color: var(--app-background);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    min-height: 10vh;
+    max-width: 550px;
+}
+
+.header__container {
+    display: flex;
+    min-width: 90%;
+    max-height: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 1em 0;
+}
+
+.icon {
+    max-width: 1.75rem;
+    max-height: 1.75rem;
+}
+
+.icon__paw {
+    padding: 0.2em 1.4em;
+    border-radius: 25px;
+    background: var(--red-gradient);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    min-height: 50vh;
+}
+
+.img {
+    display: block;
+    border-radius: 10px;
+    max-width: 96%;
+    min-height: 450px;
+    width: auto;
+    height: auto;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 20vh;
+    max-width: 550px;
+}
+
+.swipe__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 2.5em;
+    margin: 0 auto;
+}
+
+.swipe__container img {
+    max-width: 2em;
+}
+
+.like__container,
+.nope__container {
+    display: flex;
+    max-height: 2.5em;
+    max-width: 2.5em;
+    background-color: #fff;
+    box-shadow: 1px 2px 8px #e7e0e0;
+    border-radius: 100%;
+    padding: 1em;
 }
