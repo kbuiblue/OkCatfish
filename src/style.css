@@ -9,18 +9,23 @@
     --red-gradient: linear-gradient(0.25turn, #f83375, #fa695a);
 }
 
+/* * {
+outline: 1px solid red;
+} */
+
 html {
     padding: 3.5em 0;
     display: flex;
     align-items: center;
     background-color: var(--body-background);
+    overflow: hidden;
 }
 
 body {
     display: flex;
     flex-direction: column;
     margin-top: 25%;
-    max-width: 550px;
+    max-width: 450px;
     border-radius: 10px;
     min-height: fit-content;
     margin: 0 auto;
@@ -31,7 +36,7 @@ header {
     display: flex;
     align-items: center;
     min-height: 10vh;
-    max-width: 550px;
+    max-width: 450px;
 }
 
 .header__container {
@@ -57,17 +62,73 @@ header {
 
 main {
     display: flex;
+    position: relative;
+    flex-direction: column;
     justify-content: center;
     min-height: 50vh;
+    max-height: 60vh;
+    min-width: 320px;
+    width: fit-content;
+}
+
+.img__container {
+    display: flex;
+    max-width: 100%;
+    min-height: 480px;
 }
 
 .img {
     display: block;
+    margin: 0 auto;
     border-radius: 10px;
     max-width: 96%;
     min-height: 450px;
-    width: auto;
     height: auto;
+    width: auto;
+    object-fit: cover;
+}
+
+.img__pagination {
+    position: absolute;
+    top: 0;
+    left: 3%;
+    min-width: 94%;
+    min-height: 5%;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.bio__shadow {
+    position: absolute;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+    inset: 0;
+    top: 70%;
+    max-width: 96%;
+    margin: 0 auto;
+    max-height: 25vh;
+    border-radius: 10px;
+}
+
+.bio__container {
+    position: absolute;
+    top: 77%;
+    width: 90%;
+    margin-left: 1.5em;
+    padding-top: 0.75em;
+    min-height: 20%;
+    max-width: 80%;
+    border-radius: 10px;
+}
+
+.bio {
+    max-width: 12em;
+    color: var(--app-background);
+}
+
+.bio h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5em;
 }
 
 footer {
@@ -100,4 +161,15 @@ footer {
     box-shadow: 1px 2px 8px #e7e0e0;
     border-radius: 100%;
     padding: 1em;
+    transition: background-color 0.25s;
+}
+
+.like__container:hover {
+    cursor: pointer;
+    background-color: #dbfff4;
+}
+
+.nope__container:hover {
+    cursor: pointer;
+    background-color: #ffe7ef;
 }
