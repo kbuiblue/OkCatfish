@@ -1,20 +1,20 @@
-export interface Cat {
-    name: string
-    avatar: string[]
-    age: number
-    intro: string
-    hasBeenSwiped: false
-    hasBeenLiked: false
+interface Cat {
+    name: string;
+    images: string[];
+    age: number;
+    intro: string;
+    hasBeenSwiped: boolean;
+    hasBeenLiked: boolean;
 }
 
-export interface Cats {
-    [key: string] : Cat
+interface Cats {
+    [key: string]: Cat;
 }
 
-export const catsData : Cats = {
+export const catsData: Cats = {
     nana: {
         name: "Nana",
-        avatar: [
+        images: [
             "https://i.imgur.com/kYHpHMA.jpg",
             "https://i.imgur.com/JIv00fB.jpg",
             "https://i.imgur.com/KCX4wfN.jpg",
@@ -26,7 +26,7 @@ export const catsData : Cats = {
     },
     beluga: {
         name: "Beluga",
-        avatar: ["https://i.imgur.com/EaSS6GR.jpg"],
+        images: ["https://i.imgur.com/EaSS6GR.jpg"],
         age: 19,
         intro: "Yup, that's my owner. U can meet him if you want",
         hasBeenSwiped: false,
@@ -34,7 +34,7 @@ export const catsData : Cats = {
     },
     smudge: {
         name: "Smudge",
-        avatar: [
+        images: [
             "https://i.imgur.com/g4GrGhc.jpg",
             "https://i.imgur.com/4K4s3ti.jpg",
         ],
@@ -45,7 +45,7 @@ export const catsData : Cats = {
     },
     pop: {
         name: "Pop",
-        avatar: [
+        images: [
             "https://i.imgur.com/YH5Dx34.jpg",
             "https://i.imgur.com/3PcqG2y.jpg",
         ],
