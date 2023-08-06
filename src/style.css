@@ -3,6 +3,7 @@
     line-height: 1.5;
     font-weight: 400;
     box-sizing: border-box;
+    overflow: hidden;
 
     --app-background: #f7f8fb;
     --body-background: #242424;
@@ -18,7 +19,6 @@ html {
     display: flex;
     align-items: center;
     background-color: var(--body-background);
-    overflow: hidden;
 }
 
 body {
@@ -65,16 +65,52 @@ main {
     position: relative;
     flex-direction: column;
     justify-content: center;
-    min-height: 50vh;
-    max-height: 60vh;
-    min-width: 320px;
+    min-height: 40vh;
+    min-width: 360px;
     width: fit-content;
 }
+
+@media only screen and (min-width: 500px) {
+    main {
+        min-height: 55vh;
+        max-height: 60vh;
+        min-width: 450px;
+    }
+}
+
+.like {
+    position: absolute;
+    top: 2em;
+    left: 1em;
+    rotate: 325deg;
+    max-width: 9em;
+    z-index: 200;
+    visibility: hidden;
+}
+
+.nope {
+    position: absolute;
+    top: 2em;
+    left: 15em;
+    rotate: 45deg;
+    max-width: 9em;
+    z-index: 200;
+    visibility: hidden;
+}
+
 
 .img__container {
     display: flex;
     max-width: 100%;
-    min-height: 480px;
+    min-height: 420px;
+    max-height: 430px;
+}
+
+@media only screen and (min-width: 500px) {
+    .img__container {
+        min-height: 440px;
+        max-height: 450px;
+    }
 }
 
 .img {
@@ -82,20 +118,35 @@ main {
     margin: 0 auto;
     border-radius: 10px;
     max-width: 96%;
-    min-height: 450px;
+    min-height: 320px;
     height: auto;
     width: auto;
     object-fit: cover;
 }
 
+
 .img__pagination {
     position: absolute;
-    top: 0;
-    left: 3%;
-    min-width: 94%;
-    min-height: 5%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    top: 2%;
+    left: 5%;
+    right: 5%;
+    min-width: 90%;
+    min-height: 0.8%;
     border-radius: 10px;
     text-align: center;
+    gap: 5px;
+}
+
+.page {
+    background-color: #b1abab;
+    border-radius: 10px;
+}
+
+.current__page {
+    background-color: #fff;
+    box-shadow: 1px 1px 4px #b4b2b2;
 }
 
 .bio__shadow {
@@ -105,19 +156,25 @@ main {
     top: 70%;
     max-width: 96%;
     margin: 0 auto;
-    max-height: 25vh;
+    max-height: 400px;
     border-radius: 10px;
 }
 
 .bio__container {
     position: absolute;
-    top: 77%;
+    top: 70%;
     width: 90%;
     margin-left: 1.5em;
     padding-top: 0.75em;
     min-height: 20%;
     max-width: 80%;
     border-radius: 10px;
+}
+
+@media only screen and (min-width: 420px) {
+    .bio__container {
+        top: 76%;
+    }
 }
 
 .bio {
@@ -129,6 +186,11 @@ main {
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 0.5em;
+}
+
+.bio h1,
+.bio h2 {
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 footer {
