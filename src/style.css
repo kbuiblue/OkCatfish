@@ -3,7 +3,6 @@
     line-height: 1.5;
     font-weight: 400;
     box-sizing: border-box;
-    overflow: hidden;
 
     --app-background: #f7f8fb;
     --body-background: #242424;
@@ -15,10 +14,16 @@ outline: 1px solid red;
 } */
 
 html {
-    padding: 3.5em 0;
+    padding: 1.5em 0;
     display: flex;
     align-items: center;
     background-color: var(--body-background);
+}
+
+@media screen and (min-height: 800px) {
+    html {
+        padding: 6% 0;
+    }
 }
 
 body {
@@ -28,6 +33,7 @@ body {
     max-width: 450px;
     border-radius: 10px;
     min-height: fit-content;
+    max-height: 800px;
     margin: 0 auto;
     background-color: var(--app-background);
 }
@@ -35,7 +41,8 @@ body {
 header {
     display: flex;
     align-items: center;
-    min-height: 10vh;
+    min-height: 80px;
+    max-height: 90px;
     max-width: 450px;
 }
 
@@ -65,51 +72,74 @@ main {
     position: relative;
     flex-direction: column;
     justify-content: center;
-    min-height: 40vh;
-    min-width: 360px;
+    min-height: 410px;
+    min-width: 20em;
     width: fit-content;
+}
+
+.left__swipe {
+    animation: left-swipe 1.5s, fade-out 1.5s;
+}
+
+.right__swipe {
+    animation: right-swipe 1.5s, fade-out 1.5s;
+}
+
+@keyframes left-swipe {
+    0% {
+        rotate: 0deg;
+    }
+
+    90% {
+        rotate: -10deg;
+        transform: translate(-8em, 0.5ex);
+    }
+}
+
+@keyframes right-swipe {
+    0% {
+        rotate: 0deg;
+    }
+
+    90% {
+        rotate: 10deg;
+        transform: translate(8em, 0.5ex);
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 @media only screen and (min-width: 500px) {
     main {
-        min-height: 55vh;
-        max-height: 60vh;
+        min-height: 440px;
+        max-height: 450px;
         min-width: 450px;
     }
 }
 
-.like {
-    position: absolute;
-    top: 2em;
-    left: 1em;
-    rotate: 325deg;
-    max-width: 9em;
-    z-index: 200;
-    visibility: hidden;
-}
-
-.nope {
-    position: absolute;
-    top: 2em;
-    left: 15em;
-    rotate: 45deg;
-    max-width: 9em;
-    z-index: 200;
-    visibility: hidden;
-}
-
-
 .img__container {
     display: flex;
     max-width: 100%;
-    min-height: 420px;
-    max-height: 430px;
+    min-height: 410px;
+    max-height: 410px;
 }
 
 @media only screen and (min-width: 500px) {
     .img__container {
-        min-height: 440px;
-        max-height: 450px;
+        min-height: 420px;
+        max-height: 432px;
     }
 }
 
@@ -122,8 +152,8 @@ main {
     height: auto;
     width: auto;
     object-fit: cover;
+    overflow: hidden;
 }
-
 
 .img__pagination {
     position: absolute;
@@ -153,11 +183,12 @@ main {
     position: absolute;
     background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
     inset: 0;
-    top: 70%;
+    top: 31%;
     max-width: 96%;
     margin: 0 auto;
-    max-height: 400px;
+    max-height: 300px;
     border-radius: 10px;
+    z-index: 0;
 }
 
 .bio__container {
@@ -173,7 +204,7 @@ main {
 
 @media only screen and (min-width: 420px) {
     .bio__container {
-        top: 76%;
+        top: 73%;
     }
 }
 
@@ -197,7 +228,8 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 20vh;
+    min-height: 150px;
+    max-height: 170px;
     max-width: 550px;
 }
 
@@ -226,6 +258,38 @@ footer {
     transition: background-color 0.25s;
 }
 
+.like {
+    display: none;
+    position: absolute;
+    animation: fade-in 0.5s;
+    top: 2em;
+    left: 1em;
+    rotate: 325deg;
+    max-width: 9em;
+    z-index: 200;
+}
+
+.nope {
+    display: none;
+    position: absolute;
+    animation: fade-in 0.5s;
+    top: 2em;
+    right: 1em;
+    rotate: 25deg;
+    max-width: 9em;
+    z-index: 200;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 .like__container:hover {
     cursor: pointer;
     background-color: #dbfff4;
@@ -234,4 +298,9 @@ footer {
 .nope__container:hover {
     cursor: pointer;
     background-color: #ffe7ef;
+}
+
+.disable {
+    pointer-events: none;
+    opacity: 0.6;
 }
