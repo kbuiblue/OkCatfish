@@ -15,40 +15,42 @@
     </head>
 
     <body>
-        <header>
+        <main>
             <div class="header__container">
-                <img class="icon" src="/cat-profile-1.svg" />
+                <div class="header">
+                    <img class="icon" src="/cat-profile-1.svg" />
 
-                <div class="icon__paw">
-                    <img class="icon" src="/paw-icon.svg" />
+                    <div class="icon__paw">
+                        <img class="icon" src="/paw-icon.svg" />
+                    </div>
+                    <img class="icon" src="/chat-icon.svg" />
                 </div>
-                <img class="icon" src="/chat-icon.svg" />
             </div>
-        </header>
+            <div class="app">
+                <img class="like" src="/like-image.png" />
+                <img class="nope" src="/nope-image.svg" />
+                <div class="img__pagination"></div>
+                <div class="img__container">
+                    <img class="img" />
+                    <div class="bio__shadow"></div>
 
-        <main id="app">
-            <img class="like" src="/like-image.png">
-            <img class="nope" src="/nope-image.svg">
-            <div class="img__pagination"></div>
-            <div class="img__container">
-                <img class="img" />
-                <div class="bio__shadow"></div>
+                    <div class="bio__container">
+                        <div class="bio"></div>
+                    </div>
+                </div>
+            </div>
 
-                <div class="bio__container">
-                    <div class="bio"></div>
+            <div class="app__footer">
+                <div class="swipe__container">
+                    <div class="like__container">
+                        <img src="/like-icon.svg" />
+                    </div>
+                    <div class="nope__container">
+                        <img src="/nope-icon.svg" />
+                    </div>
                 </div>
             </div>
         </main>
-        <footer>
-            <div class="swipe__container">
-                <div class="like__container">
-                    <img src="/like-icon.svg" />
-                </div>
-                <div class="nope__container">
-                    <img src="/nope-icon.svg" />
-                </div>
-            </div>
-        </footer>
 
         <script type="module" src="/src/main.ts"></script>
     </body>
