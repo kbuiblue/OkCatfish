@@ -12,8 +12,9 @@ export class Cat {
         imageElement.src = this.images[this.currentPageIndex];
     };
 
+    //TODO: Add image pages tracking and rendering
     updatePageIndex = () => {
-        
+
     }
 
     updateCurrentPageHtml = (imageSource: string) => {

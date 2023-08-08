@@ -28,7 +28,7 @@ export const catsData: Cats = {
         name: "Beluga",
         images: ["https://i.imgur.com/EaSS6GR.jpg"],
         age: 19,
-        intro: "Yup, that's my owner. U can meet him if you want",
+        intro: "o_o",
         hasBeenSwiped: false,
         hasBeenLiked: false,
     },
