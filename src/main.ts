@@ -116,8 +116,8 @@ function renderState() {
         app.innerHTML = `
                 <div class="blur-background"></div>
                 <div class="end-modal">
-                <h1>Sign up for <span class="gold-text">Tinder Gold</span></h1>
-                <h2>Whoops, out of matches! Give us money to find your dream date 🤑</h2>
+                <h1>Sign up for <span class="gold-text">Meower Gold</span></h1>
+                <h2>Whoops, out of matches! Give us money to find your dream cat date 🤑</h2>
                 <div class="buttons">
                     <button class="gold-button">Sign me up!</button>
                     <button class="no-button">Nah, fam</button>

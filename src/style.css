@@ -1,6 +1,5 @@
 :root {
     font-family: Poppins, sans-serif;
-    line-height: 1.5;
     font-weight: 400;
     box-sizing: border-box;
 
@@ -15,22 +14,17 @@ outline: 1px solid red;
 } */
 
 html {
-    padding: 1.5em 0;
     display: flex;
     align-items: center;
+    min-height: 100%;
     background-color: var(--body-background);
-}
-
-@media screen and (min-height: 800px) {
-    html {
-        padding: 6% 0;
-    }
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
     display: flex;
     flex-direction: column;
-    margin-top: 25%;
     max-width: 450px;
     border-radius: 10px;
     min-height: fit-content;
@@ -227,7 +221,7 @@ h1 {
 h1,
 h2 {
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
-    max-width: 90%;
+    max-width: 85%;
     margin: 0 auto;
     margin-bottom: 0.5em;
 }
@@ -247,10 +241,10 @@ h2 {
 }
 
 .end-modal {
-    padding: 2em;
+    padding: 2em 1em;
     text-align: center;
     background-color: var(--app-background);
-    max-width: 55%;
+    max-width: 60%;
     max-height: 310px;
     margin: 0 auto;
     border-radius: 10px;
@@ -264,8 +258,7 @@ h2 {
 }
 
 .end-modal button {
-    line-height: 1.3;
-    width: 100%;
+    width: 90%;
     padding: 1em;
     margin-bottom: 0.5em;
     border: none;
@@ -273,6 +266,10 @@ h2 {
     font-weight: 700;
     text-transform: uppercase;
     cursor: pointer;
+}
+
+.end-modal button:active {
+    transform: scale(0.9);
 }
 
 .end-modal .buttons {
@@ -316,8 +313,24 @@ h2 {
     background-color: #fff;
     box-shadow: 1px 2px 8px #e7e0e0;
     border-radius: 100%;
+    cursor: pointer;
     padding: 1em;
     transition: background-color 0.25s;
+}
+
+@media (hover: hover) {
+    .like__container:hover {
+        background-color: #dbfff4;
+    }
+
+    .nope__container:hover {
+        background-color: #ffe7ef;
+    }
+}
+
+.like__container:active,
+.nope__container:active {
+    transform: scale(0.9);
 }
 
 .like {
@@ -350,16 +363,6 @@ h2 {
     100% {
         opacity: 1;
     }
-}
-
-.like__container:hover {
-    cursor: pointer;
-    background-color: #dbfff4;
-}
-
-.nope__container:hover {
-    cursor: pointer;
-    background-color: #ffe7ef;
 }
 
 .disable {
