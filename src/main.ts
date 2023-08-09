@@ -49,18 +49,28 @@ nopeContainer.addEventListener("click", function () {
 // image.addEventListener("touchmove", handleTouchMove, false);
 
 function swipeRight() {
-    currentCat.hasBeenLiked = true;
-    currentCat.hasBeenSwiped = true;
-    transitionState();
+    if (currentCat instanceof Cat) {
+        currentCat.hasBeenLiked = true;
+        currentCat.hasBeenSwiped = true;
+        transitionState();
+    }
 }
 
 function swipeLeft() {
-    currentCat.hasBeenLiked = false;
-    currentCat.hasBeenSwiped = true;
-    transitionState();
+    if (currentCat instanceof Cat) {
+        currentCat.hasBeenLiked = false;
+        currentCat.hasBeenSwiped = true;
+        transitionState();
+    }
 }
 
 function transitionState() {
+    if (!(currentCat instanceof Cat)) {
+        setTimeout(resetState, 1300);
+        setTimeout(renderState, 1200);
+        return;
+    }
+
     if (currentCat.hasBeenSwiped) {
         if (currentCat.hasBeenLiked) {
             like.style.display = "block";
@@ -76,10 +86,11 @@ function transitionState() {
     if (initialRender) {
         renderState();
         initialRender = false;
-    } else {
-        setTimeout(resetState, 1100);
-        setTimeout(renderState, 1000);
+        return;
     }
+
+    setTimeout(resetState, 1300);
+    setTimeout(renderState, 1200);
 }
 
 function resetState() {
@@ -95,8 +106,7 @@ function resetState() {
 }
 
 function renderState() {
-    //check for empty object to end
-    if (Object.keys(currentCat).length === 0) {
+    if (!(currentCat instanceof Cat)) {
         headerContainer.classList.add("disable");
         app.style.backgroundColor = "rgba(0, 0, 0, 0.1)";
         app.innerHTML = `
@@ -118,8 +128,3 @@ function renderState() {
 }
 
 transitionState();
-
-// setTimeout(swipeRight, 3000);
-// setTimeout(swipeLeft, 6000);
-// setTimeout(swipeRight, 9000);
-// setTimeout(swipeRight, 12000);

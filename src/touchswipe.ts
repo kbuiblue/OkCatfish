@@ -1,3 +1,4 @@
+//@ts-nocheck
 let xDown = null;
 let yDown = null;
 
