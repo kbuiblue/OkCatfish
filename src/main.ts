@@ -66,8 +66,14 @@ function swipeLeft() {
 
 function transitionState() {
     if (!(currentCat instanceof Cat)) {
-        setTimeout(resetState, 1300);
         setTimeout(renderState, 1200);
+        setTimeout(resetState, 1300);
+        return;
+    }
+    if (initialRender) {
+        renderState();
+        currentCat.setImageSource(image);
+        initialRender = false;
         return;
     }
 
@@ -83,14 +89,13 @@ function transitionState() {
         currentCat = getNewCat();
     }
 
-    if (initialRender) {
-        renderState();
-        initialRender = false;
-        return;
-    }
-
-    setTimeout(resetState, 1300);
-    setTimeout(renderState, 1200);
+    setTimeout(() => {
+        if (currentCat instanceof Cat) {
+            currentCat.setImageSource(image);
+        }
+    }, 1000);
+    setTimeout(renderState, 1700);
+    setTimeout(resetState, 1800);
 }
 
 function resetState() {
@@ -124,7 +129,6 @@ function renderState() {
 
     pages.innerHTML = getPagesHTML(currentCat.images.length);
     bio.innerHTML = currentCat.getBioHtml();
-    currentCat.setImageSource(image);
 }
 
 transitionState();

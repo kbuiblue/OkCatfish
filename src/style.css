@@ -84,11 +84,11 @@ main {
 }
 
 .left__swipe {
-    animation: left-swipe 1.5s, fade-out 1.5s;
+    animation: left-swipe 1.5s, fade-out 2.5s;
 }
 
 .right__swipe {
-    animation: right-swipe 1.5s, fade-out 1.5s;
+    animation: right-swipe 1.5s, fade-out 2.5s;
 }
 
 @keyframes left-swipe {
@@ -118,7 +118,7 @@ main {
         opacity: 1;
     }
 
-    90% {
+    50% {
         opacity: 0;
     }
 
