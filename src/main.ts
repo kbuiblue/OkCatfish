@@ -113,9 +113,9 @@ function resetState() {
 function renderState() {
     if (!(currentCat instanceof Cat)) {
         headerContainer.classList.add("disable");
-        app.style.backgroundColor = "rgba(0, 0, 0, 0.1)";
         app.innerHTML = `
-               <div class="end-modal">
+                <div class="blur-background"></div>
+                <div class="end-modal">
                 <h1>Sign up for <span class="gold-text">Tinder Gold</span></h1>
                 <h2>Whoops, out of matches! Give us money to find your dream date 🤑</h2>
                 <div class="buttons">

@@ -237,6 +237,15 @@ h2 {
     text-shadow: 1px 1px 4px rgba(235, 195, 106, 0.3);
 }
 
+.blur-background {
+    position: absolute;
+    min-height: 100%;
+    min-width: 100%;
+    background-color: var(--app-background);
+    filter: blur(8px);
+    z-index: 0;
+}
+
 .end-modal {
     padding: 2em;
     text-align: center;
@@ -246,6 +255,7 @@ h2 {
     margin: 0 auto;
     border-radius: 10px;
     box-shadow: 1px 1px 6px var(--body-background);
+    z-index: 100;
 }
 
 .end-modal h1,
